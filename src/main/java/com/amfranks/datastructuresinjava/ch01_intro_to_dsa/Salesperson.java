@@ -88,6 +88,11 @@ public class Salesperson {
         p3.salesTotal = 61000;
         team.add(p3);
 
+        Salesperson p4 = new Salesperson();
+        p4.name = "Tom";
+        p4.salesTotal = 78000;
+        team.add(p4);
+
         displayTopFiveSalespersons(team);
     }
 }
