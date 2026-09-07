@@ -32,13 +32,62 @@ public class Salesperson {
                 topSales[TOP_SALES_COUNT - 1] = salesPerson;
 
                 // Sort topSales in descending order
-                // sortDescending(topSales); // TODO
+                 sortDescending(topSales);
             }
         }
 
         // Display the top five salespersons
         for (int i = 0; i < TOP_SALES_COUNT; i++) {
-            // display(topSales[i]); // TODO
+             displaySalesPerson(topSales[i]);
         }
+    }
+
+    /**
+     * Displays the name and sales total of a single salesperson.
+     *
+     * @param person The Salesperson object whose details will be printed.
+     */
+    public static void displaySalesPerson(Salesperson person) {
+        System.out.println("Name: " + person.name + ", Total Sales: " + person.salesTotal);
+    }
+
+    /**
+     * Sorts an array of Salesperson objects in descending order based on their total sales.
+     *
+     * @param topSales The array of Salesperson objects to be sorted.
+     */
+    public static void sortDescending(Salesperson[] topSales) {
+        for (int i = 1; i < topSales.length; i++) {
+            Salesperson key = topSales[i];
+            int j = i - 1;
+
+            while (j >= 0 && topSales[j].salesTotal < key.salesTotal) {
+                topSales[j + 1] = topSales[j];
+                j = j - 1;
+            }
+
+            topSales[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Salesperson> team = new ArrayList<>();
+
+        Salesperson p1 = new Salesperson();
+        p1.name = "Alice";
+        p1.salesTotal = 12000;
+        team.add(p1);
+
+        Salesperson p2 = new Salesperson();
+        p2.name = "Bob";
+        p2.salesTotal = 45000;
+        team.add(p2);
+
+        Salesperson p3 = new Salesperson();
+        p3.name = "George";
+        p3.salesTotal = 61000;
+        team.add(p3);
+
+        displayTopFiveSalespersons(team);
     }
 }
