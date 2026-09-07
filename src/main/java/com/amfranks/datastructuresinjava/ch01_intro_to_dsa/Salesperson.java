@@ -32,13 +32,13 @@ public class Salesperson {
                 topSales[TOP_SALES_COUNT - 1] = salesPerson;
 
                 // Sort topSales in descending order
-                sortDescending(topSales); // TODO
+                // sortDescending(topSales); // TODO
             }
         }
 
         // Display the top five salespersons
         for (int i = 0; i < TOP_SALES_COUNT; i++) {
-            display(topSales[i]); // TODO
+            // display(topSales[i]); // TODO
         }
     }
 }
