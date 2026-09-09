@@ -4,6 +4,14 @@ import java.util.Scanner;
 
 public class LinearSearchDemo {
 
+    /*
+     * In the worst case, linear search compares the search key against all array elements.
+     * In the best case, linear search compares the search key against the array's first
+     * element. If comparing an array element against the search key is a constant time
+     * operation, then linear search's worst case complexity is O(N) and the best case
+     * is O(1).
+     */
+
     static int linearSearch(int[] numbers, int key) {
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == key) {
